@@ -10,8 +10,8 @@ const dist = "./dist";
 
 gulp.task("copy-html", () => {
     return gulp.src("./src/index.html")
-                .pipe(gulp.dest(dist))
-                .pipe(browsersync.stream());
+        .pipe(gulp.dest(dist))
+        .pipe(browsersync.stream());
 });
 
 gulp.task("build-js", () => {
@@ -48,9 +48,9 @@ gulp.task("build-js", () => {
 
 gulp.task("build-sass", () => {
     return gulp.src("./src/scss/**/*.scss")
-                .pipe(sass().on('error', sass.logError))
-                .pipe(gulp.dest(dist + '/css'))
-                .pipe(browsersync.stream());
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(dist + '/css'))
+        .pipe(browsersync.stream());
 });
 
 gulp.task("copy-assets", () => {
@@ -58,8 +58,8 @@ gulp.task("copy-assets", () => {
         .pipe(gulp.dest(dist + "/icons"));
 
     return gulp.src("./src/img/**/*.*")
-                .pipe(gulp.dest(dist + "/img"))
-                .pipe(browsersync.stream());
+        .pipe(gulp.dest(dist + "/img"))
+        .pipe(browsersync.stream());
 });
 
 gulp.task("watch", () => {
